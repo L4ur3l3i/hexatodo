@@ -2,8 +2,8 @@
 
 interface TagRepository
 {
-    public function findById(int $id): ?Category;
+    public function findById(int $id): ?Tag;
     public function findByTask(int $taskId): array;
-    public function save(Category $category): void;
-    public function delete(Category $category): void;
+    public function save(Tag $tag): void;
+    public function delete(Tag $tag): void;
 }
