@@ -1,5 +1,9 @@
 <?php
 
+namespace L4ur3l3i\Hexatodo\Core\Domain\Ports;
+
+use L4ur3l3i\Hexatodo\Core\Domain\Entities\Task\Task;
+
 interface TaskRepository
 {
     public function findById(int $id): ?Task;

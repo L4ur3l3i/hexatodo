@@ -1,5 +1,11 @@
 <?php
 
+namespace L4ur3l3i\Hexatodo\Core\Domain\Entities\Task;
+
+use InvalidArgumentException;
+use L4ur3l3i\Hexatodo\Core\Domain\Entities\Tag\Tag;
+use L4ur3l3i\Hexatodo\Core\Domain\Entities\User\User;
+
 class Task
 {
     private int $id;

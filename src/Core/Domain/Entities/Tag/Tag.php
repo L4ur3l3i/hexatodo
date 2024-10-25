@@ -1,5 +1,9 @@
 <?php
 
+namespace L4ur3l3i\Hexatodo\Core\Domain\Entities\Tag;
+
+use L4ur3l3i\Hexatodo\Core\Domain\Entities\Task\Task;
+
 class Tag
 {
     private int $id;

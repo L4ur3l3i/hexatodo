@@ -1,5 +1,7 @@
 <?php
 
+namespace L4ur3l3i\Hexatodo\Core\Domain\Entities\User;
+
 class User
 {
     private int $id;

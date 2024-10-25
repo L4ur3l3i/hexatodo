@@ -1,0 +1,17 @@
+{
+    "name": "l4ur3l3i/hexatodo",
+    "description": "A todolist in hexagonal architecture",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "L4ur3l3i\\Hexatodo\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "L4ur3l3i",
+            "email": "l4ur3l3i@protonmail.com"
+        }
+    ],
+    "require": {}
+}
