@@ -8,22 +8,29 @@ class Task
     private string $status;
     private int $priority;
     private User $user;
-    private Category $category;
+    private array $tags;
 
     const STATUS_NEW = 'new';
     const STATUS_IN_PROGRESS = 'in progress';
     const STATUS_DONE = 'done';
 
-    public function __construct(int $id, string $title, string $description, int $priority, User $user, Category $category, string $status = self::STATUS_NEW)
-    {
+    public function __construct(
+        int $id,
+        string $title,
+        string $description,
+        int $priority,
+        User $user,
+        string $status = self::STATUS_NEW,
+        array $tags = [] 
+    ) {
         $this->id = $id;
         $this->title = $title;
         $this->description = $description;
         $this->status = $status;
         $this->priority = $priority;
         $this->user = $user;
-        $this->category = $category;
-    }
+        $this->tags = $tags; 
+    }    
 
     public function getId(): int
     {
@@ -82,20 +89,25 @@ class Task
         return $this->user;
     }
 
-    public function setUser(User $user): self
+    public function getTags(): array
     {
-        $this->user = $user;
+        return $this->tags;
+    }
+
+    public function addTag(Tag $tag): self
+    {
+        if (!in_array($tag, $this->tags)) {
+            $this->tags[] = $tag;
+        }
         return $this;
     }
 
-    public function getCategory(): Category
+    public function removeTag(Tag $tag): self
     {
-        return $this->category;
-    }
-
-    public function setCategory(Category $category): self
-    {
-        $this->category = $category;
+        $index = array_search($tag, $this->tags, true);
+        if ($index !== false) {
+            unset($this->tags[$index]);
+        }
         return $this;
     }
 }
